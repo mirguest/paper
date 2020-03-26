@@ -1,0 +1,23 @@
+#+TITLE: org-mode + beamer
+#+AUTHOR: Tao Lin
+#+OPTIONS: H:2 toc:t num:t
+#+LaTeX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [presentation]
+#+LATEX_HEADER: \usepackage[UTF8]{ctex}
+#+BEAMER_THEME: Madrid
+
+* This is the first structural section
+
+** Frame 1
+   
+   使用中文
+
+** 中文标题也能够正常使用
+
+   中文内容
+
+* 另外一节
+
+** 中文标题2
+
+   需要加载宏包 *ox-beamer*
