@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-04-07 周二 12:47 -->
+<!-- 2020-04-07 周二 13:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Study of the online event filtering algorithm for BESIII 阅读笔记</title>
@@ -243,15 +243,73 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 <h1 class="title">Study of the online event filtering algorithm for BESIII 阅读笔记</h1>
+<p>
+主要目标：
+</p>
+<ul class="org-ul">
+<li>了解在线事例过滤算法如何处理一个巴巴事例 (Bhabha scattering events)</li>
+</ul>
+
+<p>
+常见的几种事例类型
+</p>
 <ul class="org-ul">
 <li>巴巴事例： e+e- -&gt; e+e-</li>
 <li>缪子对产生：e+e- -&gt; mu+mu-</li>
 <li>双光子：e+e- -&gt; gamma gamma</li>
 </ul>
+
+<p>
+Online filter system 主要作用
+</p>
+<ul class="org-ul">
+<li>事例分类</li>
+<li>本底压低</li>
+</ul>
+
+<p>
+EVT: event filtering software，是DAQ系统的一部分。
+</p>
+
+<p>
+平均的时间延迟设计在 5ms。因此要求更快的处理器和算法。
+</p>
+
+<p>
+在线过滤的框架部分采用 Step-by-step 技术，使用控制器配置和管理全局和局部的算法。
+</p>
+
+<p>
+基于模拟数据进行事例的产生
+</p>
+<ul class="org-ul">
+<li>Bhlumi产生巴巴事例</li>
+<li>radgg产生双光子事例</li>
+<li>KKMC产生mu、tau、强子事例</li>
+<li>EvtGen处理粒子的衰变</li>
+</ul>
+
+<p>
+本底事例采用特别的产生子
+</p>
+<ul class="org-ul">
+<li>beam-gas样本</li>
+<li>cosmic ray样本</li>
+</ul>
+
+<p>
+一个在线处理的例子：
+</p>
+
+
+<div class="figure">
+<p><img src="./figures/BESIIIFilterExample.png" alt="BESIIIFilterExample.png" />
+</p>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: 林韬</p>
-<p class="date">Created: 2020-04-07 周二 12:47</p>
+<p class="date">Created: 2020-04-07 周二 13:35</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

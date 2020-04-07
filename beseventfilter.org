@@ -1,8 +1,36 @@
 #+TITLE: Study of the online event filtering algorithm for BESIII 阅读笔记
 #+AUTHOR: 林韬
+#+LATEX_HEADER: \usepackage[UTF8]{ctex}
 
+主要目标：
+- 了解在线事例过滤算法如何处理一个巴巴事例 (Bhabha scattering events)
+
+常见的几种事例类型
 - 巴巴事例： e+e- -> e+e-
 - 缪子对产生：e+e- -> mu+mu-
 - 双光子：e+e- -> gamma gamma
 
+Online filter system 主要作用
+- 事例分类
+- 本底压低
+
+EVT: event filtering software，是DAQ系统的一部分。
+
+平均的时间延迟设计在 5ms。因此要求更快的处理器和算法。
+
+在线过滤的框架部分采用 Step-by-step 技术，使用控制器配置和管理全局和局部的算法。
+
+基于模拟数据进行事例的产生
+- Bhlumi产生巴巴事例
+- radgg产生双光子事例
+- KKMC产生mu、tau、强子事例
+- EvtGen处理粒子的衰变
+
+本底事例采用特别的产生子
+- beam-gas样本
+- cosmic ray样本
+
+一个在线处理的例子：
+
+[[./figures/BESIIIFilterExample.png]]
 
