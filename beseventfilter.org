@@ -1,0 +1,8 @@
+#+TITLE: Study of the online event filtering algorithm for BESIII 阅读笔记
+#+AUTHOR: 林韬
+
+- 巴巴事例： e+e- -> e+e-
+- 缪子对产生：e+e- -> mu+mu-
+- 双光子：e+e- -> gamma gamma
+
+
