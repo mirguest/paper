@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-04-09 周四 11:50 -->
+<!-- 2020-04-09 周四 13:10 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>刘春秀ECAL优化报告及代码阅读笔记</title>
@@ -269,14 +269,14 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org612814e">1. 报告主要内容</a></li>
-<li><a href="#org495ef0d">2. 代码相关内容</a></li>
+<li><a href="#orgeea7be6">1. 报告主要内容</a></li>
+<li><a href="#org2ffcc26">2. 代码相关内容</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org612814e" class="outline-2">
-<h2 id="org612814e"><span class="section-number-2">1</span> 报告主要内容</h2>
+<div id="outline-container-orgeea7be6" class="outline-2">
+<h2 id="orgeea7be6"><span class="section-number-2">1</span> 报告主要内容</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>第2页，主要内容包括BGO晶体的模拟和重建，性能研究</li>
@@ -312,14 +312,43 @@ for the JavaScript code in this tag.
 <li>探测器阵列前端到探测器中心的距离为 1835mm</li>
 </ul></li>
 <li>GEANT4仅仅模拟了cell中的沉积能量</li>
+<li>10mm 的单元对于桶部 90度 部分的立体角为 0.31度（？如何计算的）</li>
+<li>在 r-phi 平面，大约能放 19 个 Matrix module</li>
+<li>在 z 方向，桶部量能器的一半为 2245mm，所以大概放 7 个 Matrix module</li>
+</ul></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; import math
+&gt;&gt;&gt; math.asin(300./1835.)
+0.16422492996270302
+&gt;&gt;&gt; math.asin(300./1835.)*2
+0.32844985992540604
+&gt;&gt;&gt; 2*math.pi / (math.asin(300./1835.)*2)
+19.129815761244515
+&gt;&gt;&gt; 1150./60
+19.166666666666668
+
+&gt;&gt;&gt; 2*2245. / 600
+7.483333333333333
+
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>第5页，产生的模拟样本，为single particle， \(\gamma\) 和 \(\pi^0\)
+<ul class="org-ul">
+<li>\(\gamma\) 三个能量点 98 GeV，100 GeV，102 GeV</li>
+<li>\(\pi^0\) 一个能量点 30 GeV</li>
+<li>动量方向，从探测器中心飞向晶体中心。</li>
+<li class="off"><input type='checkbox' /> 但是报告中的 30 是怎么回事？</li>
 </ul></li>
 </ul>
 </div>
 </div>
 
-
-<div id="outline-container-org495ef0d" class="outline-2">
-<h2 id="org495ef0d"><span class="section-number-2">2</span> 代码相关内容</h2>
+<div id="outline-container-org2ffcc26" class="outline-2">
+<h2 id="org2ffcc26"><span class="section-number-2">2</span> 代码相关内容</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>默认的探测器参数
@@ -334,7 +363,7 @@ for the JavaScript code in this tag.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: 林韬</p>
-<p class="date">Created: 2020-04-09 周四 11:50</p>
+<p class="date">Created: 2020-04-09 周四 13:10</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
