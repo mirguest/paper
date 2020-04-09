@@ -1,0 +1,35 @@
+#+TITLE: 刘春秀ECAL优化报告及代码阅读笔记
+#+AUTHOR: 林韬
+#+LATEX_HEADER: \usepackage[UTF8]{ctex}
+
+* 报告主要内容
+
+- 第2页，主要内容包括BGO晶体的模拟和重建，性能研究
+- 第3页，研究动机
+  - 优化晶体的颗粒度
+    - 粒子鉴别的性能，特别是高能 $\pi^0$ 衰变产生的 2$\gamma$
+    - 区分 $\gamma$ 和 K_L，基于cluster的时间等分布
+    - 重建能量泄露的可能性
+  - crystal的排布
+    - 单元的大小
+    - 层数
+    - 每层的深度
+  - CEPC中ECAL的几何
+    - 晶体的大小，wrapper（？）
+    - 估计所有晶体的体积
+    - 估计电子学通道数
+    - 造价估计
+- 第4页，基于GEANT4 10.5的探测器构建
+  - 一个简化版本的晶体量能器模块
+  - Matrix module
+    - 60x60x60 cells
+    - 读出单元 10mm x 10mm x 10mm
+    - 探测器阵列前端到探测器中心的距离为 1835mm
+  - GEANT4仅仅模拟了cell中的沉积能量
+
+* 代码相关内容
+
+- 默认的探测器参数
+  - 每个 tile 为 $10\textrm{mm} \times 10\textrm{mm} \times 10\textrm{mm}$
+  - 每个 layer 由 $60\times60$ 的 tile 构成
+  - 最终构建的 Ecal 为 60 层 layer
