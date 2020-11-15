@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-04-09 周四 13:10 -->
+<!-- 2020-11-15 周日 23:01 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>刘春秀ECAL优化报告及代码阅读笔记</title>
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
+    overflow: auto;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -194,50 +194,26 @@
   /*]]>*/-->
 </style>
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -269,14 +245,14 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgeea7be6">1. 报告主要内容</a></li>
-<li><a href="#org2ffcc26">2. 代码相关内容</a></li>
+<li><a href="#org986b9bf">1. 报告主要内容</a></li>
+<li><a href="#org396da8e">2. 代码相关内容</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgeea7be6" class="outline-2">
-<h2 id="orgeea7be6"><span class="section-number-2">1</span> 报告主要内容</h2>
+<div id="outline-container-org986b9bf" class="outline-2">
+<h2 id="org986b9bf"><span class="section-number-2">1</span> 报告主要内容</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>第2页，主要内容包括BGO晶体的模拟和重建，性能研究</li>
@@ -312,7 +288,8 @@ for the JavaScript code in this tag.
 <li>探测器阵列前端到探测器中心的距离为 1835mm</li>
 </ul></li>
 <li>GEANT4仅仅模拟了cell中的沉积能量</li>
-<li>10mm 的单元对于桶部 90度 部分的立体角为 0.31度（？如何计算的）</li>
+<li>10mm 的单元对于桶部 90度 部分的立体角为 0.31度</li>
+<li class="off"><input type='checkbox' /> ？如何计算的</li>
 <li>在 r-phi 平面，大约能放 19 个 Matrix module</li>
 <li>在 z 方向，桶部量能器的一半为 2245mm，所以大概放 7 个 Matrix module</li>
 </ul></li>
@@ -343,12 +320,78 @@ for the JavaScript code in this tag.
 <li>动量方向，从探测器中心飞向晶体中心。</li>
 <li class="off"><input type='checkbox' /> 但是报告中的 30 是怎么回事？</li>
 </ul></li>
+
+<li>第6页，每层cluster重建
+<ul class="org-ul">
+<li>流程：clustering，finding seed，finding shower</li>
+</ul></li>
+
+<li>第7页，研究了相关的性能
+<ul class="org-ul">
+<li>包括高能 \(\gamma\) 能量泄露时的修正、两个 \(\gamma\) 和 \(\pi^0\) 衰变的区分</li>
+<li>ECAL 探测器的配置
+<ul class="org-ul">
+<li>将3层合并，也就是每层变成3cm</li>
+<li>在每层进行cluster重建</li>
+<li>考虑探测器由不同的厚度，30cm/27cm/24cm，分别对应10层/9层/8层</li>
+</ul></li>
+</ul></li>
+
+<li>第8页，展示了一个例子，100 GeV 的 \(\gamma\) 例子在每层的分布
+<ul class="org-ul">
+<li>报告中提到，如果没有任何的能量阈值限制，将会重建出很多的cluster</li>
+<li>分布给了cell大小为 1cm x 1cm 和 2cm x 2cm</li>
+</ul></li>
+
+<li>第9页，给出每层的cluster能量和xy平面R的关系</li>
+<li>第10页，如果假设hit、seed、cluster energy的阈值，小能量的cluster就会消失
+<ul class="org-ul">
+<li>在后面的研究中，使用了能量重建时能量最大的cluster</li>
+</ul></li>
+<li>第11页，给出了能量最大的cluster对应的能量和总能量的比值分布</li>
+
+<li>从12页开始，研究纵向的能量泄露修正
+<ul class="org-ul">
+<li class="off"><input type='checkbox' /> 但我对于 longitudinal 没有太多的概念。和地球是一样的，连接南北极的线</li>
+<li>应该就是径向</li>
+</ul></li>
+<li>第13页，产生的样本：三个能量点的 \(\gamma\) 。研究时主要看能量的泄露。</li>
+<li>第14页，沉积能量和每层的关系。此处每层厚度3cm
+<ul class="org-ul">
+<li>两张图分别是正常的y坐标和对数的y坐标。应该是Profile图，y轴应该是沉积能量的平均值。</li>
+<li>但为什么分布是这样的呢？应该和shower有关系。
+<ul class="org-ul">
+<li>猜测：刚开始时发生shower，开始簇射产生次级粒子，这些次级粒子也往横向、径向发展。</li>
+<li>当到达一定的径向位置后，shower的横向位置变大，所以沉积了更多的能量。</li>
+<li>最后逐渐减少。</li>
+<li class="off"><input type='checkbox' /> 这部分应该之前学习过的。需要确认。</li>
+</ul></li>
+</ul></li>
+<li>第15页给出修正的方法
+<ul class="org-ul">
+<li>利用前10层或9层的沉积能量，拟和出随簇射深度的变化。</li>
+<li>然后将该函数在30cm或27cm至60cm的积分值作为修正量。</li>
+<li class="off"><input type='checkbox' /> 其实我这里还没有看到到底泄露了多少能量</li>
+<li>修正函数 \(\frac{dE}{dt} = E_0 b \frac{(bt)^{a-1}e^{-bt}}{\Gamma(a)}\)</li>
+<li>三个参数为 \(E_0\) \(a\) \(b\)</li>
+</ul></li>
+<li>第16页给出了修正前后的差值，以 102 GeV gamma 为例</li>
+<li>第17页给出三个能量点的重建能量分布。
+<ul class="org-ul">
+<li>三条曲线
+<ul class="org-ul">
+<li>黑色表示仅用30cm厚度得出的能量？是重建能量？还是原初的能量？看图中的介绍，好像是沉积能量。</li>
+<li>蓝色表示加上额外的修正值后的分布</li>
+<li>红线表示？</li>
+</ul></li>
+<li>整体来说，经过修正后的能量得到了改进</li>
+</ul></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org2ffcc26" class="outline-2">
-<h2 id="org2ffcc26"><span class="section-number-2">2</span> 代码相关内容</h2>
+<div id="outline-container-org396da8e" class="outline-2">
+<h2 id="org396da8e"><span class="section-number-2">2</span> 代码相关内容</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>默认的探测器参数
@@ -363,8 +406,8 @@ for the JavaScript code in this tag.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: 林韬</p>
-<p class="date">Created: 2020-04-09 周四 13:10</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2020-11-15 周日 23:01</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

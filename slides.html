@@ -6,9 +6,9 @@
 <!-- 2020-11-15 周日 23:01 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Study of the online event filtering algorithm for BESIII 阅读笔记</title>
+<title>org-mode + beamer</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="林韬" />
+<meta name="author" content="Tao Lin" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -215,199 +215,68 @@
     /*]]>*///-->
 // @license-end
 </script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
-</script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
-<h1 class="title">Study of the online event filtering algorithm for BESIII 阅读笔记</h1>
-<p>
-主要目标：
-</p>
-<ul class="org-ul">
-<li>了解在线事例过滤算法如何处理一个巴巴事例 (Bhabha scattering events)</li>
+<h1 class="title">org-mode + beamer</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgd96c608">1. This is the first structural section</a>
+<ul>
+<li><a href="#org686b2f7">1.1. Frame 1</a></li>
+<li><a href="#org814f159">1.2. 中文标题也能够正常使用</a></li>
 </ul>
-
-<p>
-常见的几种事例类型
-</p>
-<ul class="org-ul">
-<li>巴巴事例： e+e- -&gt; e+e-</li>
-<li>缪子对产生：e+e- -&gt; mu+mu-</li>
-<li>双光子：e+e- -&gt; gamma gamma</li>
+</li>
+<li><a href="#org0f0177c">2. 另外一节</a>
+<ul>
+<li><a href="#orgec84f0c">2.1. 中文标题2</a></li>
 </ul>
-
-<p>
-Online filter system 主要作用
-</p>
-<ul class="org-ul">
-<li>事例分类</li>
-<li>本底压低</li>
+</li>
 </ul>
-
-<p>
-EVT: event filtering software，是DAQ系统的一部分。
-</p>
-
-<p>
-平均的时间延迟设计在 5ms。因此要求更快的处理器和算法。
-</p>
-
-<p>
-在线过滤的框架部分采用 Step-by-step 技术，使用控制器配置和管理全局和局部的算法。
-</p>
-
-<p>
-基于模拟数据进行事例的产生
-</p>
-<ul class="org-ul">
-<li>Bhlumi产生巴巴事例</li>
-<li>radgg产生双光子事例</li>
-<li>KKMC产生mu、tau、强子事例</li>
-<li>EvtGen处理粒子的衰变</li>
-</ul>
-
-<p>
-本底事例采用特别的产生子
-</p>
-<ul class="org-ul">
-<li>beam-gas样本</li>
-<li>cosmic ray样本</li>
-</ul>
-
-<p>
-一个在线处理的例子：
-</p>
-
-
-<div id="org1cbfbb3" class="figure">
-<p><img src="./figures/BESIIIFilterExample.png" alt="BESIIIFilterExample.png" />
-</p>
+</div>
 </div>
 
-
+<div id="outline-container-orgd96c608" class="outline-2">
+<h2 id="orgd96c608"><span class="section-number-2">1</span> This is the first structural section</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org686b2f7" class="outline-3">
+<h3 id="org686b2f7"><span class="section-number-3">1.1</span> Frame 1</h3>
+<div class="outline-text-3" id="text-1-1">
 <p>
-图中的方块表示算法，圆圈表示是后续算法用到的变量。
+使用中文
 </p>
+</div>
+</div>
 
-<ul class="org-ul">
-<li>N hits 小于 1000，信号。大于 1000，本底。</li>
-<li>E tot in EMC
-<ul class="org-ul">
-<li>强子：在 Elow 和 Ehigh 之间</li>
-<li>e+e-或gamma gamma：大于 E high</li>
-<li>其他待确定的类型：小于 Elow</li>
-</ul></li>
-<li>Acoplanarity
-<ul class="org-ul">
-<li>巴巴事例和gamma gamma事例可以用于在线亮度的计算。</li>
-<li>但他们无法通过 EMC 的总沉积能量区分。</li>
-<li>在磁场作用下，带点粒子会发生偏转。因此可以通过重建shower位置来区分。</li>
-<li>定义 \(\cos\phi_{\mathrm{acop}} = -(\cos\varphi_1 \cos\varphi_2 + \sin\varphi_1 \sin\varphi_2)\)</li>
-<li>此处的 \(\varphi\) 是shower的方位角。</li>
-<li>所以上面的公式可以理解为两个矢量点乘。每个矢量的分量是 \(\cos\varphi\) 和 \(\sin\varphi\) 。</li>
-<li>这样，该变量可以用于区分 e+e- 和 gamma gamma事例。</li>
-<li>gamma gamma事例：小于 \(\phi_1\)</li>
-<li>e+e-事例：在 \(\phi_2\) 和 \(\phi_3\) 之间</li>
-<li>这是可以理解的，因为gamma不会偏转，所以相对的两个cluster自然是几乎在一个线上。</li>
-</ul></li>
-<li>Charged track multiplicity 以及 acollinearity angle
-<ul class="org-ul">
-<li>对于小于 Elow 的事例，则需要 MDC 快速重建。</li>
-<li>此处的 N trk 是一个非常有用的变量。</li>
-<li>cosmic ray 和 beam-gas 事例：重建得出的径迹几乎为0.</li>
-<li>其中 10% 的强子事例重建不出径迹。考虑到低能的强子事例占了5%，因此最终有 0.5% 的强子事例会被丢弃。</li>
-<li>对于两条带电径迹，定义 acollinearity angle \(\cos\phi_{\mathrm{acol}}\) 。这个是三维的向量。</li>
-<li>MUC 探测器中的 hits 数目可以用于决定是否为缪子事例。之后，再由 TOF 决定是缪子对还是宇宙线事例。</li>
-</ul></li>
-<li>TOF
-<ul class="org-ul">
-<li>对于宇宙线事例，是先从外面进入探测器，然后再飞出探测器。</li>
-<li>对于缪子对事例，是从束流管飞出。</li>
-<li>因此，击中TOF的时间差可以用于鉴别缪子对和宇宙线事例。</li>
-<li>定义 \(\Delta T = T_1 - T_2\) 其中 \(T_1\) 和 \(T_2\) 分别是上下两部分的 TOF 时间。</li>
-<li>因为缪子会先击中上面，然后再击中下面，所以时间差小于0.</li>
-</ul></li>
-
-<li>Pre-scaling the 端盖巴巴事例
-<ul class="org-ul">
-<li>因为在charm threshold以上时，巴巴事例的截面会比其他物理事例高很多。
-所以为了避免太多的数据，需要对端盖的巴巴事例进行pre-scaling。</li>
-<li>EBB：Endcap Bhabha 如果在端盖有shower</li>
-<li>注意，有些纯中性的道，例如 \(J/\psi \to \gamma\pi^0\) ，可能也会发生误判。
-为了减少误判，还需要借助MDC sector的hit 数目。</li>
-</ul></li>
-
-<li>Online luminosity monitoring
-<ul class="org-ul">
-<li>这部分还没有太理解</li>
-</ul></li>
-</ul>
-
+<div id="outline-container-org814f159" class="outline-3">
+<h3 id="org814f159"><span class="section-number-3">1.2</span> 中文标题也能够正常使用</h3>
+<div class="outline-text-3" id="text-1-2">
 <p>
-论文的第五节给出了在线过滤算法的性能
+中文内容
 </p>
-<ul class="org-ul">
-<li>算法是在离线环境下开发，但是将在离线和在线平台运行。</li>
-<li>因为大多数感兴趣的事例击中在 charmonium，因此生成的样本也集中在 \(J/\psi\) \(\psi'\) \(\psi''\)</li>
-</ul>
+</div>
+</div>
+</div>
 
+<div id="outline-container-org0f0177c" class="outline-2">
+<h2 id="org0f0177c"><span class="section-number-2">2</span> 另外一节</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgec84f0c" class="outline-3">
+<h3 id="orgec84f0c"><span class="section-number-3">2.1</span> 中文标题2</h3>
+<div class="outline-text-3" id="text-2-1">
 <p>
-性能研究的第一项是过滤的效率
+需要加载宏包 <b>ox-beamer</b>
 </p>
-<ul class="org-ul">
-<li>BII的亮度在能量为 1.89 GeV 时是经过优化的，因此在这个能量点的物理过程和本底贡献都被考虑了。</li>
-<li>\(\epsilon_{ij} = N_j / N_i\)</li>
-<li>\(N_i\) 表示 level 1 触发给出的类型 \(i\) 的事例数</li>
-<li>\(N_j\) 表示类型为 \(j\) 的事例数</li>
-<li>在当前的算法中，不允许有多个标记</li>
-
-<li>所有的事例被分成两个大类：physics 和 background</li>
-<li>物理事例更关系挑选的效率，本底事例更关心压低的效率。</li>
-</ul>
-
-<p>
-性能研究的第二项是运行时间
-</p>
-<ul class="org-ul">
-<li>最开始研究的时候，所有子算法都要调用。从而保证子算法都被调试过。</li>
-<li>我觉得这一点非常值得借鉴。特别是在测试的阶段。</li>
-<li>后来他们优化了算法，允许快速跳过后续的处理。</li>
-</ul>
-
-<p>
-第三项研究是挑选条件
-</p>
-<ul class="org-ul">
-<li>这里主要研究了 Elow 的影响</li>
-</ul>
-
-<p>
-论文的最后一部分是总结。
-</p>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: 林韬</p>
+<p class="author">Author: Tao Lin</p>
 <p class="date">Created: 2020-11-15 周日 23:01</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
