@@ -11,6 +11,8 @@
 * Crystal ECAL optimization of detector for CEPC [阅读笔记](liucxecal202003.html)
 > 刘春秀老师关于量能器优化方面的工作
 
+* LHCb testing and validation [笔记](lhcb-ci.html)
+
 ### 想读
 
 ### 归档

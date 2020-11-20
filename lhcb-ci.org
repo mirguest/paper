@@ -1,0 +1,20 @@
+
+
+* LHCb关于Testing & Validation的报告
+
+** Software Quality, Testing & Validation and CI at LHCb, Chris Burr
+- https://indico.ihep.ac.cn/event/11444/session/12/contribution/173/material/slides/0.pdf
+** Evolution of the LHCb Continuous Integration system
+- https://cds.cern.ch/record/2699547/
+- https://cds.cern.ch/record/2699547/files/rcurrieCHEP%2005.11.pdf
+** Improvements to the LHCb software performance testing infrastructure using message queues and big data technologies
+- https://www.epj-conferences.org/articles/epjconf/abs/2019/19/epjconf_chep2018_05014/epjconf_chep2018_05014.html
+
+** Testing and verification of the LHCb Simulation
+-  https://www.epj-conferences.org/articles/epjconf/abs/2019/19/epjconf_chep2018_02043/epjconf_chep2018_02043.html
+
+** A New Nightly Build System for LHCb
+- https://iopscience.iop.org/article/10.1088/1742-6596/513/5/052007/pdf
+** LHCb Continuous Integration and Deployment system: a message based approach
+- https://www.epj-conferences.org/articles/epjconf/abs/2019/19/epjconf_chep2018_05001/epjconf_chep2018_05001.html
+
