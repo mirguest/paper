@@ -8,6 +8,9 @@
 ** CHEP 系列
 每18个月举办一次。
 
+- [ ] 25th vCHEP2021, virtual
+  - Website: https://indico.cern.ch/event/948465/
+  - Proceedings: https://www.epj-conferences.org/articles/epjconf/abs/2021/05/contents/contents.html
 - [-] 24th CHEP 2019, Adelaide, Australia
   - Website: http://chep2019.org/
   - Talks: https://indico.cern.ch/event/773049/timetable/
@@ -54,7 +57,7 @@
 
 ** ACAT 系列
 - https://indico.cern.ch/category/7679/
-
+- [ ] 20th ACAT 2021, hybrid workshop
 - 19th ACAT 2019, Saas-Fee, Switzerland
   - https://indico.cern.ch/event/708041/
 - [X] 18th ACAT 2017, Seattle, US
