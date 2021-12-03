@@ -8,10 +8,10 @@
 ** CHEP 系列
 每18个月举办一次。
 
-- [ ] 25th vCHEP2021, virtual
+- [X] 25th vCHEP2021, virtual
   - Website: https://indico.cern.ch/event/948465/
   - Proceedings: https://www.epj-conferences.org/articles/epjconf/abs/2021/05/contents/contents.html
-- [-] 24th CHEP 2019, Adelaide, Australia
+- [X] 24th CHEP 2019, Adelaide, Australia
   - Website: http://chep2019.org/
   - Talks: https://indico.cern.ch/event/773049/timetable/
   - Proceedings: https://www.epj-conferences.org/articles/epjconf/abs/2020/21/contents/contents.html
@@ -19,7 +19,7 @@
 - [X] 23rd CHEP 2018, Sofia, Bulgaria
   - https://chep2018.org/
   - https://inspirehep.net/conferences/1685062
-- [-] 22nd CHEP 2016, San Francisco，United States
+- [X] 22nd CHEP 2016, San Francisco，United States
   - https://chep2016.org/
   - https://inspirehep.net/conferences/1477480
 - 21st CHEP 2015, Okinawa, Japan
@@ -57,7 +57,11 @@
 
 ** ACAT 系列
 - https://indico.cern.ch/category/7679/
-- [ ] 20th ACAT 2021, hybrid workshop
+- [ ] 21th ACAT 2022, Bari, Apulia, Italy
+- [X] 20th ACAT 2021, hybrid workshop
+  - https://indico.cern.ch/event/855454/
+  - Deferred Optical Photon simulation for the JUNO experiment, https://indico.cern.ch/event/855454/contributions/4596433/
+  - Parallel processing in data analysis of the JUNO experiment, https://indico.cern.ch/event/855454/contributions/4605040/
 - 19th ACAT 2019, Saas-Fee, Switzerland
   - https://indico.cern.ch/event/708041/
 - [X] 18th ACAT 2017, Seattle, US
