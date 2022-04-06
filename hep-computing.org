@@ -58,6 +58,7 @@
 ** ACAT 系列
 - https://indico.cern.ch/category/7679/
 - [ ] 21th ACAT 2022, Bari, Apulia, Italy
+  - https://indico.cern.ch/event/1106990/
 - [X] 20th ACAT 2021, hybrid workshop
   - https://indico.cern.ch/event/855454/
   - Deferred Optical Photon simulation for the JUNO experiment, https://indico.cern.ch/event/855454/contributions/4596433/
