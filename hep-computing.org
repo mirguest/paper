@@ -1,0 +1,97 @@
+#+AUTHOR: Tao Lin
+
+* HEP Computing and Software
+本页整理了高能物理计算与软件相关的会议及会议文章。希望对相关领域的同学和老师有所帮助。
+
+** HSF 系列
+
+** CHEP 系列
+每18个月举办一次。
+
+- [X] 25th vCHEP2021, virtual
+  - Website: https://indico.cern.ch/event/948465/
+  - Proceedings: https://www.epj-conferences.org/articles/epjconf/abs/2021/05/contents/contents.html
+- [X] 24th CHEP 2019, Adelaide, Australia
+  - Website: http://chep2019.org/
+  - Talks: https://indico.cern.ch/event/773049/timetable/
+  - Proceedings: https://www.epj-conferences.org/articles/epjconf/abs/2020/21/contents/contents.html
+  - https://inspirehep.net/conferences/1732179
+- [X] 23rd CHEP 2018, Sofia, Bulgaria
+  - https://chep2018.org/
+  - https://inspirehep.net/conferences/1685062
+- [X] 22nd CHEP 2016, San Francisco，United States
+  - https://chep2016.org/
+  - https://inspirehep.net/conferences/1477480
+- 21st CHEP 2015, Okinawa, Japan
+  - https://chep2015.kek.jp/
+  - https://inspirehep.net/conferences/1320679
+- [X] 20th CHEP 2013, Amsterdam, The Netherlands
+  - http://www.chep2013.org/
+  - https://inspirehep.net/conferences/1253773
+- 19th CHEP 2012, New York, United States
+  - Talks: 
+  - https://inspirehep.net/conferences/1115389
+- 18th CHEP 2010, Taipei, Taiwan
+  - http://event.twgrid.org/chep2010/
+- 17th CHEP 2009, Prague, Czech Republic
+  - http://www.particle.cz/conferences/chep2009/homepage.aspx
+- 16th CHEP 2007, Victoria, Canada
+- 15th CHEP 2006, Mumbai, India
+- 14th CHEP 2004, Interlaken, Switzerland
+  - https://chep2004.web.cern.ch/
+- 13th CHEP 2003, San Diego, California, United States
+- 12th CHEP 2001, Beijing, China
+- 11th CHEP 2000, Padova, Italy
+  - http://chep2000.pd.infn.it/
+- 10th CHEP 1998, Chicago, Illinois, United States
+- 9th CHEP 1997, Berlin, Germany
+  - https://www.zeuthen.desy.de/CHEP97/
+- 8th CHEP 1995, Rio de Janeiro, Brazil
+- 7th CHEP 1994, San Francisco, California, United States
+- 6th CHEP 1992, Annecy, France
+- 5th CHEP 1991, Tsukuba, Japan
+- 4th CHEP 1990, Santa Fe, New Mexico, United States
+- 3rd CHEP 1989, Oxford, England
+- 2nd CHEP 1987, Asilomar, California, United States
+- 1st CHEP 1985, Amsterdam, Netherlands
+
+** ACAT 系列
+- https://indico.cern.ch/category/7679/
+- [ ] 21th ACAT 2022, Bari, Apulia, Italy
+- [X] 20th ACAT 2021, hybrid workshop
+  - https://indico.cern.ch/event/855454/
+  - Deferred Optical Photon simulation for the JUNO experiment, https://indico.cern.ch/event/855454/contributions/4596433/
+  - Parallel processing in data analysis of the JUNO experiment, https://indico.cern.ch/event/855454/contributions/4605040/
+- 19th ACAT 2019, Saas-Fee, Switzerland
+  - https://indico.cern.ch/event/708041/
+- [X] 18th ACAT 2017, Seattle, US
+  - https://indico.cern.ch/event/567550/overview
+- 17th ACAT 2016, Valparaiso, Chile
+  - https://indico.cern.ch/event/397113/
+- 16th ACAT 2014, Prague, Czech Republic
+  - https://indico.cern.ch/event/258092/
+- [X] 15th ACAT 2013, IHEP, Beijing, China
+  - https://indico.ihep.ac.cn//event/2813/overview
+- 14th ACAT 2011, Brunel University, Uxbridge, London, UK
+  - http://acat2011.cern.ch/
+- 13th ACAT 2010, Jaipur, India
+  - http://acat2010.cern.ch/
+- 12th ACAT 2008, Erice, Sicily
+  - http://acat2008.cern.ch/
+- 11th ACAT 2007, Amsterdam
+- 10th ACAT 2005, DESY, Germany
+  - https://www.zeuthen.desy.de/acat05/
+- 9th ACAT 2003, KEK, Japan
+  - https://www-conf.kek.jp/past/acat03/
+- 8th ACAT 2002, Moscow
+- 7th ACAT 2000, Fermilab, USA
+  - https://conferences.fnal.gov/acat2000/
+- 6th AIHENP 1999, Heraklion, Crete
+- 5th AIHENP 1996, Lausanne (EPFL-UNIL)
+- 4th AIHENP 1995, Pisa, Italy
+- 3rd AIHENP 1993, Oberammergau, Germany
+- 2nd AIHENP 1992, La Londe Les Maures, France
+- 1st Workshop 1990, Lyon, France
+
+** CERN School of Computing (CSC)
+- https://inspirehep.net/conferences?sort=dateasc&size=250&page=1&start_date=all&subject=computing&series=CSC
