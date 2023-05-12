@@ -8,6 +8,8 @@
 ** CHEP 系列
 每18个月举办一次。
 
+- [X] 26th CHEP 2023, Norfolk, Unitied States
+  - indico: https://indico.jlab.org/event/459/
 - [X] 25th vCHEP2021, virtual
   - Website: https://indico.cern.ch/event/948465/
   - Proceedings: https://www.epj-conferences.org/articles/epjconf/abs/2021/05/contents/contents.html
