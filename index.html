@@ -3,13 +3,13 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-06 Wed 15:48 -->
+<!-- 2024-08-26 Mon 13:04 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
-<meta name="generator" content="Org mode" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -30,8 +30,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -40,21 +41,21 @@
   pre.src {
     position: relative;
     overflow: auto;
-    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -189,51 +190,28 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
+  .org-svg { }
 </style>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 </head>
 <body>
-<div id="content">
-<div id="table-of-contents">
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge7c5182">1. 阅读文献、报告列表</a>
+<li><a href="#org00bfa39">1. 阅读文献、报告列表</a>
 <ul>
-<li><a href="#org5a71a1b">1.1. 清单</a>
+<li><a href="#orgde1d1e4">1.1. 清单</a>
 <ul>
-<li><a href="#orgc2cbf5d">1.1.1. Configuration of the ATLAS Trigger System, https://arxiv.org/abs/physics/0306046</a></li>
-<li><a href="#org6886455">1.1.2. Study of the online event filtering algorithm for BESIII</a></li>
-<li><a href="#org437575d">1.1.3. Crystal ECAL optimization of detector for CEPC</a></li>
-<li><a href="#org21bb61a">1.1.4. LHCb testing and validation</a></li>
+<li><a href="#org1debfb4">1.1.1. Configuration of the ATLAS Trigger System, https://arxiv.org/abs/physics/0306046</a></li>
+<li><a href="#org98379c5">1.1.2. Study of the online event filtering algorithm for BESIII</a></li>
+<li><a href="#org0c9cc7a">1.1.3. Crystal ECAL optimization of detector for CEPC</a></li>
+<li><a href="#orgafc920e">1.1.4. LHCb testing and validation</a></li>
 </ul>
 </li>
-<li><a href="#org2dd03b5">1.2. 归档</a>
+<li><a href="#org44bb8a6">1.2. 归档</a>
 <ul>
-<li><a href="#orgb5d662e">1.2.1. 高能物理计算</a></li>
+<li><a href="#org4b41817">1.2.1. 高能物理计算</a></li>
 </ul>
 </li>
 </ul>
@@ -241,41 +219,41 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orge7c5182" class="outline-2">
-<h2 id="orge7c5182"><span class="section-number-2">1</span> 阅读文献、报告列表</h2>
+<div id="outline-container-org00bfa39" class="outline-2">
+<h2 id="org00bfa39"><span class="section-number-2">1.</span> 阅读文献、报告列表</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org5a71a1b" class="outline-3">
-<h3 id="org5a71a1b"><span class="section-number-3">1.1</span> 清单</h3>
+<div id="outline-container-orgde1d1e4" class="outline-3">
+<h3 id="orgde1d1e4"><span class="section-number-3">1.1.</span> 清单</h3>
 <div class="outline-text-3" id="text-1-1">
 </div>
-<div id="outline-container-orgc2cbf5d" class="outline-4">
-<h4 id="orgc2cbf5d"><span class="section-number-4">1.1.1</span> Configuration of the ATLAS Trigger System, <a href="https://arxiv.org/abs/physics/0306046">https://arxiv.org/abs/physics/0306046</a></h4>
+<div id="outline-container-org1debfb4" class="outline-4">
+<h4 id="org1debfb4"><span class="section-number-4">1.1.1.</span> Configuration of the ATLAS Trigger System, <a href="https://arxiv.org/abs/physics/0306046">https://arxiv.org/abs/physics/0306046</a></h4>
 </div>
-<div id="outline-container-org6886455" class="outline-4">
-<h4 id="org6886455"><span class="section-number-4">1.1.2</span> Study of the online event filtering algorithm for BESIII</h4>
+<div id="outline-container-org98379c5" class="outline-4">
+<h4 id="org98379c5"><span class="section-number-4">1.1.2.</span> Study of the online event filtering algorithm for BESIII</h4>
 </div>
-<div id="outline-container-org437575d" class="outline-4">
-<h4 id="org437575d"><span class="section-number-4">1.1.3</span> Crystal ECAL optimization of detector for CEPC</h4>
+<div id="outline-container-org0c9cc7a" class="outline-4">
+<h4 id="org0c9cc7a"><span class="section-number-4">1.1.3.</span> Crystal ECAL optimization of detector for CEPC</h4>
 </div>
-<div id="outline-container-org21bb61a" class="outline-4">
-<h4 id="org21bb61a"><span class="section-number-4">1.1.4</span> LHCb testing and validation</h4>
+<div id="outline-container-orgafc920e" class="outline-4">
+<h4 id="orgafc920e"><span class="section-number-4">1.1.4.</span> LHCb testing and validation</h4>
 </div>
 </div>
 
 
-<div id="outline-container-org2dd03b5" class="outline-3">
-<h3 id="org2dd03b5"><span class="section-number-3">1.2</span> 归档</h3>
+<div id="outline-container-org44bb8a6" class="outline-3">
+<h3 id="org44bb8a6"><span class="section-number-3">1.2.</span> 归档</h3>
 <div class="outline-text-3" id="text-1-2">
 </div>
-<div id="outline-container-orgb5d662e" class="outline-4">
-<h4 id="orgb5d662e"><span class="section-number-4">1.2.1</span> <a href="hep-computing.html">高能物理计算</a></h4>
+<div id="outline-container-org4b41817" class="outline-4">
+<h4 id="org4b41817"><span class="section-number-4">1.2.1.</span> <a href="hep-computing.html">高能物理计算</a></h4>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2022-04-06 Wed 15:48</p>
+<p class="date">Created: 2024-08-26 Mon 13:04</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
